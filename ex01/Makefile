@@ -1,5 +1,5 @@
-SRC= PhoneBook.cpp \
-	Contact.cpp \
+SRC= Contact.cpp \
+	PhoneBook.cpp \
 	ft_main.cpp \
 
 CXX = c++
@@ -19,3 +19,10 @@ ${NAME} : ${OBJ} Contact.hpp PhoneBook.hpp
 
 clean:
 	rm -rf ${OBJ} ${NAME}
+
+fclean: clean
+	rm -rf ${NAME}
+
+re: fclean all
+
+.PHONY: all clean fclean re
