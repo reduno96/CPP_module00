@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
+/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:40:12 by rel-mora          #+#    #+#             */
-/*   Updated: 2024/11/21 22:23:33 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/17 12:59:14 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include <iostream>
 #include <string>
@@ -18,9 +18,9 @@ int main(int ac, char **av)
 {
     for(int i = 1; i < ac; i++)
     {
-        std::string it = av[i];
-        for(std::string::iterator text = it.begin(); text != it.end(); text++)
-            std::cout << static_cast<char>(std::toupper(*text));
+        std::string text = av[i];
+        for(std::string::iterator ite = text.begin(); ite != text.end(); ite++)
+            std::cout << static_cast<char>(std::toupper(*ite));
     }
     std::cout << std::endl;
     return 0;

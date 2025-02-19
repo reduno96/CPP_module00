@@ -1,17 +1,25 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
+/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:23:37 by rel-mora          #+#    #+#             */
-/*   Updated: 2024/11/22 09:01:11 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/17 13:27:23 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "Contact.hpp"
 #include <limits>
+
+void changeTab(std::string *input)
+{
+    for(std::string::iterator ite = (*input).begin(); ite != (*input).end() ; ite++){
+        if (*ite == '\t')
+            *ite = ' ';
+    }
+}
 
 std::string Contact::enterData(std::string in)
 {
@@ -30,6 +38,7 @@ std::string Contact::enterData(std::string in)
             std::cout << "Input cannot be empty. Please try again." << std::endl;
         }
     } while (input.empty());
+    changeTab(&input);
     return input;
 };
 

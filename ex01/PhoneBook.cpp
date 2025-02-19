@@ -1,14 +1,16 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
+/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:24:51 by rel-mora          #+#    #+#             */
-/*   Updated: 2024/11/22 08:26:51 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:19:30 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
+
+#include <sstream>
 
 #include "PhoneBook.hpp"
 
@@ -46,7 +48,6 @@ std::string handleOutput(std::string str)
     }
     return pure;
 }
-#include <sstream>
 
 int stringToInt(std::string str)
 {
@@ -64,8 +65,8 @@ void PhoneBook::searchContact()
 
     if (this->nbrOfContact == 0)
     {
-        std::cout << "Sorry there are any contacct in The PhoneBook" << std::endl;
-        return;
+        std::cout << "Sorry there are any contact in The PhoneBook" << std::endl;
+        return ;
     }
     for (int i = 0; i < this->nbrOfContact; i++)
     {
