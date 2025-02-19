@@ -16,7 +16,7 @@ ${NAME} : ${OBJ} Account.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf ${OBJ} ${NAME}
+	rm -rf ${OBJ}
 
 fclean: clean
 	rm -rf ${NAME}

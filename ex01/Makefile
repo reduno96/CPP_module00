@@ -11,14 +11,14 @@ NAME= phone
 
 all: ${NAME}
 
-${NAME} : ${OBJ} Contact.hpp PhoneBook.hpp
+${NAME} : ${OBJ}
 	${CXX} ${CXXFLAGS} ${OBJ}  -o ${NAME}
 
-%.o: %.cpp
+%.o: %.cpp Contact.hpp PhoneBook.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -rf ${OBJ} ${NAME}
+	rm -rf ${OBJ} 
 
 fclean: clean
 	rm -rf ${NAME}
