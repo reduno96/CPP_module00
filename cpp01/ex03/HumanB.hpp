@@ -6,7 +6,7 @@
 /*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:35:40 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/19 18:50:13 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/23 22:57:23 by rel-mora         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,13 +15,21 @@
 
 #include <string>
 #include <iostream>
+#include "Weapon.hpp"
 
 class HumanB
 {
 private:
+    Weapon *weapon;
+    std::string name;
 public:
-    HumanB();
+    HumanB(std::string name);
     ~HumanB();
+    std::string getName();
+    void setName(std::string name);
+    Weapon *getWeapon();
+    void setWeapon(Weapon& weapon);
+    void attack();
 };
 
 #endif
