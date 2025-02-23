@@ -1,6 +1,6 @@
 SRC= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp \
 
-OBJ= ${SRC: .cpp=.o}
+OBJ= ${SRC:.cpp=.o}
 
 CC= c++
 CXXFLAGS= -Wall -Wextra -Werror -fsanitize=address -std=c++98
