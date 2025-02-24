@@ -5,7 +5,7 @@ OBJ= ${SRC:.cpp=.o}
 CC= c++
 CXXFLAGS= -Wall -Wextra -Werror -fsanitize=address -std=c++98
 
-NAME= Weapon
+NAME= harl
 
 ${NAME}: ${OBJ}
 	${CC} ${CXXFLAGS} ${OBJ} -o ${NAME}
