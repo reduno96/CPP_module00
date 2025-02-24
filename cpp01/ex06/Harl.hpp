@@ -6,9 +6,12 @@
 /*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 02:08:54 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/24 02:08:57 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/24 02:47:49 by rel-mora         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
+
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <string>
 #include <iostream>
