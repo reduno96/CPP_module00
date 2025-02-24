@@ -6,16 +6,16 @@
 /*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 02:42:06 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/24 02:42:50 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/24 02:50:01 by rel-mora         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "Fixed.hpp"
 
-fixed::fixed()
+Fixed::Fixed()
 {
 }
 
-fixed::~fixed()
+Fixed::~Fixed()
 {
 }

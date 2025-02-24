@@ -6,7 +6,7 @@
 /*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 02:41:41 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/24 02:48:18 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/24 02:49:44 by rel-mora         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -20,7 +20,7 @@ class Fixed
 private:
     
 public:
-    fixed();
-    ~fixed();
+    Fixed();
+    ~Fixed();
 };
 #endif
