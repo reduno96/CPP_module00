@@ -1,23 +1,23 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:17:38 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/19 13:17:39 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/14 09:16:44 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* Zombie::zombieHorde( int N, std::string name ){
-    Zombie* multiZombie = new Zombie[N];
+Zombie *zombieHorde(int N, std::string name)
+{
+    Zombie *multiZombie = new Zombie[N];
     for (int i = 0; i < N; i++)
     {
         multiZombie[i].setName(name);
-        multiZombie[i].announce();
     }
     return multiZombie;
 }

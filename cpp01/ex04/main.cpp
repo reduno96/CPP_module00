@@ -1,22 +1,23 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 23:13:40 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/24 00:59:17 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/14 17:42:15 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 #include <fstream>
 
-void createFile(std::string content)
+void createFile(std::string content, std::string file)
 {
-    std::ofstream replaceFile("replaceFile");
+    std::string nameFile = file + ".replace";
+    std::ofstream replaceFile(nameFile.c_str());
     if (!replaceFile)
         std::cout << "Error: to create file!!" << std::endl;
     else
@@ -33,6 +34,11 @@ int main(int ac, char **av)
         std::string s1 = av[2];
         std::string s2 = av[3];
 
+        if (s1.empty())
+        {
+            std::cout << "Error: s1 must not be empty!!" << std::endl;
+            return 1;
+        }
         if (!fileName)
         {
             std::cout << "Error: The file not opening!!" << std::endl;
@@ -42,12 +48,24 @@ int main(int ac, char **av)
         {
             std::string line;
             std::string content;
+            bool firstLine = true;
+
             while (std::getline(fileName, line))
+            {
+                if (!firstLine)
+                    content += '\n';
                 content += line;
-            size_t posS1 = content.find(s1);
-            content.erase(posS1, s1.length());
-            content.append(s2);
-            createFile(content);
+                firstLine = false;
+            }
+
+            size_t pos = 0;
+            while ((pos = content.find(s1, pos)) != std::string::npos)
+            {
+                content.erase(pos, s1.length());
+                content.insert(pos, s2);
+                pos += s2.length();
+            }
+            createFile(content, av[1]);
             fileName.close();
         }
     }

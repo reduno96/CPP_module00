@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:35:40 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/23 22:57:23 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/14 11:30:20 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef HUMANB_HPP
 #define HUMANB_HPP
@@ -22,13 +22,14 @@ class HumanB
 private:
     Weapon *weapon;
     std::string name;
+
 public:
     HumanB(std::string name);
     ~HumanB();
     std::string getName();
     void setName(std::string name);
     Weapon *getWeapon();
-    void setWeapon(Weapon& weapon);
+    void setWeapon(Weapon &weapon);
     void attack();
 };
 

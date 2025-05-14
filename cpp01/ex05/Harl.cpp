@@ -1,19 +1,18 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 01:01:43 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/24 02:04:08 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/14 18:36:09 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Harl.hpp"
 
-
-Harl::Harl(/* args */)
+Harl::Harl()
 {
 }
 
@@ -32,7 +31,7 @@ void Harl::info(void)
 
 void Harl::warning(void)
 {
-    std::cout << "think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
+    std::cout << "I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
 }
 
 void Harl::error(void)
@@ -42,11 +41,15 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
-    
+
     void (Harl::*pointerToFunction[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++)
+    {
         if (level == levels[i])
+        {
             (this->*pointerToFunction[i])();
+            break;
+        }
     }
 }

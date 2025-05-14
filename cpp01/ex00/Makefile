@@ -1,9 +1,9 @@
 SRC= main.cpp Zombie.cpp  newZombie.cpp randomChump.cpp \
 
-OBJ= ${SRC: .cpp=.o}
+OBJ= ${SRC:.cpp=.o}
 
 CC= c++
-CXXFLAGS= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS= -Wall -Wextra -Werror -fsanitize=address -std=c++98
 
 NAME= Zombie
 
@@ -13,8 +13,14 @@ ${NAME}: ${OBJ}
 %.o: %.cpp  Zombie.hpp newZombie.hpp randomChump.hpp
 	${CC} ${CXXFLAGS} -c $< -o $@
 
+all: ${NAME}
+
 clean:
 	rm -rf ${OBJ}
 
 fclean: clean
 	rm -rf ${NAME}
+
+re : fclean all
+
+.PHONY : all clean fclean re

@@ -13,8 +13,14 @@ ${NAME}: ${OBJ}
 %.o: %.cpp  Weapon.hpp newWeapon.hpp randomChump.hpp
 	${CC} ${CXXFLAGS} -c $< -o $@
 
+all: ${NAME}
+
 clean:
 	rm -rf ${OBJ}
 
 fclean: clean
 	rm -rf ${NAME}
+
+re : fclean all
+
+.PHONY : all clean fclean re

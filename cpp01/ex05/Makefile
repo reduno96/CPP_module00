@@ -9,6 +9,8 @@ NAME= harl
 
 ${NAME}: ${OBJ}
 	${CC} ${CXXFLAGS} ${OBJ} -o ${NAME}
+all: ${NAME}
+
 
 %.o: %.cpp  Harl.hpp
 	${CC} ${CXXFLAGS} -c $< -o $@
@@ -18,3 +20,8 @@ clean:
 
 fclean: clean
 	rm -rf ${NAME}
+
+
+re : fclean all
+
+.PHONY : all clean fclean re

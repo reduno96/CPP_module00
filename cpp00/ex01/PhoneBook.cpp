@@ -1,32 +1,32 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:24:51 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/17 14:19:30 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:42:22 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include <sstream>
 
 #include "PhoneBook.hpp"
 
-int PhoneBook::count = 0;
+int count = 0;
 int PhoneBook::nbrOfContact = 0;
 
 void PhoneBook::addContact()
 {
     if (count == 8)
-        PhoneBook::count = 0;
-    PhoneBook::contacts[count].setFirstName();
-    PhoneBook::contacts[count].setLastName();
-    PhoneBook::contacts[count].setNickName();
-    PhoneBook::contacts[count].setPhoneNumber();
-    PhoneBook::contacts[count].setPassword();
-    PhoneBook::contacts[count].setIndex(count);
+        count = 0;
+    contacts[count].setFirstName();
+    contacts[count].setLastName();
+    contacts[count].setNickName();
+    contacts[count].setPhoneNumber();
+    contacts[count].setPassword();
+    contacts[count].setIndex(count);
     std::cout << "\n\n\n***********************************************\n";
     std::cout << "Have successfully saved.                      *\n";
     std::cout << "***********************************************\n\n\n";
@@ -43,9 +43,7 @@ std::string handleOutput(std::string str)
         pure.append(".");
     }
     else
-    {
         return str;
-    }
     return pure;
 }
 
@@ -66,18 +64,18 @@ void PhoneBook::searchContact()
     if (this->nbrOfContact == 0)
     {
         std::cout << "Sorry there are any contact in The PhoneBook" << std::endl;
-        return ;
+        return;
     }
     for (int i = 0; i < this->nbrOfContact; i++)
     {
         std::cout << "********************************************" << std::endl;
-        std::cout << std::setw(10) << std::right << PhoneBook::contacts[i].getIndex();
+        std::cout << std::setw(10) << std::right << contacts[i].getIndex();
         std::cout << "|";
-        std::cout << std::setw(10) << std::right << handleOutput(PhoneBook::contacts[i].getFirstName());
+        std::cout << std::setw(10) << std::right << handleOutput(contacts[i].getFirstName());
         std::cout << "|";
-        std::cout << std::setw(10) << std::right << handleOutput(PhoneBook::contacts[i].getLastName());
+        std::cout << std::setw(10) << std::right << handleOutput(contacts[i].getLastName());
         std::cout << "|";
-        std::cout << std::setw(10) << std::right << handleOutput(PhoneBook::contacts[i].getNickName());
+        std::cout << std::setw(10) << std::right << handleOutput(contacts[i].getNickName());
         std::cout << "*\n";
         std::cout << "********************************************\n";
     }
@@ -87,7 +85,7 @@ void PhoneBook::searchContact()
         if (!(std::getline(std::cin, indx)))
             std::exit(0);
         std::cout << std::endl;
-        if (PhoneBook::contacts->checkInput(indx))
+        if (contacts->checkInput(indx))
         {
             std::cout << "invalid Index" << std::endl;
         }
@@ -96,15 +94,15 @@ void PhoneBook::searchContact()
             in = stringToInt(indx);
             if (in >= 0 && in < this->nbrOfContact)
             {
-                std::cout << "index | " << PhoneBook::contacts[in].getIndex() << std::endl;
+                std::cout << "index | " << contacts[in].getIndex() << std::endl;
                 std::cout << "********************************************" << std::endl;
-                std::cout << "First Name| " << PhoneBook::contacts[in].getFirstName() << std::endl;
+                std::cout << "First Name| " << contacts[in].getFirstName() << std::endl;
                 std::cout << "********************************************" << std::endl;
-                std::cout << "Last Name| " << PhoneBook::contacts[in].getLastName() << std::endl;
+                std::cout << "Last Name| " << contacts[in].getLastName() << std::endl;
                 std::cout << "********************************************" << std::endl;
-                std::cout << "Nick Name| " << PhoneBook::contacts[in].getNickName() << std::endl;
+                std::cout << "Nick Name| " << contacts[in].getNickName() << std::endl;
                 std::cout << "********************************************" << std::endl;
-                std::cout << "Phone Number| " << PhoneBook::contacts[in].getPhoneNumber() << std::endl;
+                std::cout << "Phone Number| " << contacts[in].getPhoneNumber() << std::endl;
                 std::cout << "********************************************" << std::endl;
                 found = 1;
             }

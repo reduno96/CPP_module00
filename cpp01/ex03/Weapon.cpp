@@ -1,18 +1,20 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:37:51 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/23 22:18:33 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/14 10:13:41 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-
+Weapon::Weapon()
+{
+}
 Weapon::~Weapon()
 {
 }
@@ -21,7 +23,7 @@ Weapon::Weapon(std::string type)
     this->type = type;
 }
 
-std::string Weapon::getType(void) const
+const std::string &Weapon::getType(void) const
 {
     return this->type;
 }

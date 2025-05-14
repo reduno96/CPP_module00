@@ -7,6 +7,7 @@ CXXFLAGS= -Wall -Wextra -Werror -fsanitize=address -std=c++98
 
 NAME= main
 
+all: ${NAME}
 ${NAME}: ${OBJ}
 	${CC} ${CXXFLAGS} ${OBJ} -o ${NAME}
 
@@ -18,3 +19,7 @@ clean:
 
 fclean: clean
 	rm -rf ${NAME}
+
+re : fclean all
+
+.PHONY : all clean fclean re

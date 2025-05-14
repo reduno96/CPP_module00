@@ -1,21 +1,22 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:23:37 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/17 13:27:23 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/03/04 14:19:50 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <limits>
 
 void changeTab(std::string *input)
 {
-    for(std::string::iterator ite = (*input).begin(); ite != (*input).end() ; ite++){
+    for (std::string::iterator ite = (*input).begin(); ite != (*input).end(); ite++)
+    {
         if (*ite == '\t')
             *ite = ' ';
     }
@@ -31,7 +32,7 @@ std::string Contact::enterData(std::string in)
 
         if (!(std::getline(std::cin, input)))
         {
-            std::exit(0);
+            exit(0);
         }
         if (input.empty())
         {
@@ -54,59 +55,59 @@ int Contact::checkInput(std::string input)
 
 void Contact::setFirstName()
 {
-    Contact::firstName = enterData("First Name");
+    firstName = enterData("First Name");
 };
 
 void Contact::setLastName()
 {
-    Contact::lastName = enterData("Last Name");
+    lastName = enterData("Last Name");
 };
 
 void Contact::setNickName()
 {
-    Contact::nickName = enterData("Nick Name");
+    nickName = enterData("Nick Name");
 };
 void Contact::setPhoneNumber()
 {
-    Contact::phoneNumber = enterData("Phone Number");
+    phoneNumber = enterData("Phone Number");
     while (Contact::checkInput(phoneNumber))
     {
         std::cout << "Invalid number\n";
-        Contact::phoneNumber = enterData("Phone Number");
+        phoneNumber = enterData("Phone Number");
     }
 };
 
 void Contact::setPassword()
 {
-    Contact::password = enterData("Password");
+    password = enterData("Password");
 };
 
 void Contact::setIndex(int index)
 {
-    Contact::index = index;
+    this->index = index;
 };
 
 std::string Contact::getFirstName()
 {
-    return Contact::firstName;
+    return firstName;
 };
 
 std::string Contact::getLastName()
 {
-    return Contact::lastName;
+    return lastName;
 };
 
 std::string Contact::getNickName()
 {
-    return Contact::nickName;
+    return nickName;
 };
 
 std::string Contact::getPhoneNumber()
 {
-    return Contact::phoneNumber;
+    return phoneNumber;
 };
 
 int Contact::getIndex()
 {
-    return Contact::index;
+    return index;
 };

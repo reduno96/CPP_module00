@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 10:29:05 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/19 10:57:43 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/03/24 14:51:25 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
@@ -21,7 +21,8 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 Account::Account(void)
-{}
+{
+}
 
 Account::Account(int initial_deposit)
 {
@@ -36,8 +37,8 @@ Account::Account(int initial_deposit)
 }
 Account::~Account(void)
 {
-     _displayTimestamp();
-     std::cout << "index:" << _accountIndex << ";amount:"<< _amount << ";closed" << std::endl;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 int Account::getNbAccounts()
 {
@@ -65,9 +66,10 @@ void Account::displayAccountsInfos(void)
     std::cout << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
-void Account::_displayTimestamp(void) {
+void Account::_displayTimestamp(void)
+{
     std::time_t now = std::time(0);
-    std::tm* localTime = std::localtime(&now);
+    std::tm *localTime = std::localtime(&now);
 
     std::cout << "["
               << localTime->tm_year + 1900

@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 18:33:24 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/23 22:18:53 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/14 10:13:36 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
@@ -22,9 +22,10 @@ private:
     std::string type;
 
 public:
+    Weapon();
     Weapon(std::string type);
     ~Weapon();
-    std::string getType() const;
+    const std::string &getType() const;
     void setType(std::string type);
 };
 

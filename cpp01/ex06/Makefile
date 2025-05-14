@@ -12,9 +12,15 @@ ${NAME}: ${OBJ}
 
 %.o: %.cpp  Harl.hpp
 	${CC} ${CXXFLAGS} -c $< -o $@
+all: ${NAME}
 
 clean:
 	rm -rf ${OBJ}
 
 fclean: clean
 	rm -rf ${NAME}
+
+
+re : fclean all
+
+.PHONY : all clean fclean re

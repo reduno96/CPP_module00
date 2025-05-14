@@ -1,19 +1,20 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 13:26:11 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/02/19 13:26:15 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:43:57 by rel-mora         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* Zombie::newZombie( std::string name ){
-    Zombie* newZombie = new Zombie();
-    newZombie->name  = name;
+Zombie *newZombie(std::string name)
+{
+    Zombie *newZombie = new Zombie();
+    newZombie->setName(name);
     return newZombie;
-} 
+}

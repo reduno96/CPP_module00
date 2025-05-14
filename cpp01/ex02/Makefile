@@ -1,6 +1,6 @@
 SRC= main.cpp
 
-OBJ= ${SRC: .cpp=.o}
+OBJ= ${SRC:.cpp=.o}
 
 CC= c++
 CXXFLAGS= -Wall -Wextra -Werror -std=c++98
