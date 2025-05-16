@@ -6,7 +6,7 @@
 /*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 02:42:06 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/05/16 16:33:24 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/16 16:32:37 by rel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,15 @@ Fixed::Fixed() : value(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
-
+Fixed::Fixed(const int num)
+{
+    std::cout << "Int constructor called" << std::endl;
+    this->value = num << this->constBit;
+}
+Fixed::Fixed(const float num)
+{
+    std::cout << "float constructor called" << std::endl;
+}
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
