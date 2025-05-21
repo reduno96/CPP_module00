@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
+/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 02:41:41 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/05/16 16:31:55 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/17 23:19:02 by rel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
 #include <string>
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -27,8 +28,11 @@ public:
     Fixed(const int);
     Fixed(const float);
     Fixed(const Fixed &other);
+    int toInt(void) const;
+    float toFloat(void) const;
     Fixed &operator=(const Fixed &other);
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };
+std::ostream &operator<<(std::ostream &os, const Fixed &obj);
 #endif

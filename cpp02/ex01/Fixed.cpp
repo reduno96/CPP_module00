@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rel-mora <reduno96@gmail.com>              +#+  +:+       +#+        */
+/*   By: rel-mora <rel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 02:42:06 by rel-mora          #+#    #+#             */
-/*   Updated: 2025/05/16 16:32:37 by rel-mora         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:19:54 by rel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,21 @@ Fixed::Fixed(const int num)
 }
 Fixed::Fixed(const float num)
 {
-    std::cout << "float constructor called" << std::endl;
+    int scale = 1 << constBit;
+    this->value = roundf(num * scale);
+    std::cout << "Float constructor called" << std::endl;
+}
+
+int Fixed::toInt(void) const
+{
+    return this->value >> this->constBit;
+}
+float Fixed::toFloat(void) const
+{
+    int scale = 1 << constBit;
+
+    float fff = ((float)this->value / scale);
+    return fff;
 }
 Fixed::~Fixed()
 {
@@ -44,6 +58,12 @@ Fixed &Fixed::operator=(const Fixed &other)
         this->value = other.getRawBits();
     }
     return *this;
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &obj)
+{
+    os << obj.toFloat();
+    return os;
 }
 
 int Fixed::getRawBits(void) const
