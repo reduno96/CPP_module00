@@ -12,7 +12,7 @@ ClapTrap::ClapTrap(std::string name) : healthOfClap(10), energyPoint(10), attack
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap" << getName() << " has been destroyed!" << std::endl;
+    std::cout << "ClapTrap " << getName() << " has been destroyed!" << std::endl;
 }
 
 void ClapTrap::setHealth(int healthOfClap)
