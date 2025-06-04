@@ -1,4 +1,5 @@
 #include "Animal.hpp"
+#include "Aanimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
@@ -13,6 +14,7 @@ int main()
 {
     // atexit(ff);
     {
+        std::cout << "#########Creating Dog and Cat objects:" << std::endl;
         const Animal *j = new Dog();
         const Animal *i = new Cat();
         j->makeSound();
@@ -20,6 +22,15 @@ int main()
         delete j;
         delete i;
     }
+    // {
+    //     std::cout << "Creating generic Animal objects:" << std::endl;
+    //     const Animal *j = new Aanimal();
+    //     const Animal *i = new Aanimal();
+    //     j->makeSound();
+    //     i->makeSound();
+    //     delete j;
+    //     delete i;
+    // }
     const int count = 10;
     int i = 0;
     Animal *zoo[count];
