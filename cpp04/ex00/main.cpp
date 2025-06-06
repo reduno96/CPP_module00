@@ -4,8 +4,14 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+// void    ff()
+// {
+//     system("leaks -q Animal");
+// }
+
 int main()
 {
+    // atexit(ff);
     const Animal *meta = new Animal();
     const Animal *j = new Dog();
     const Animal *i = new Cat();

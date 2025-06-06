@@ -2,10 +2,10 @@ SRC= main.cpp Animal.cpp Aanimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cp
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror  -std=c++98
 
 OBJ= ${SRC:.cpp=.o}
-NAME= Animal
+NAME= Brain
 
 all: ${NAME}
 

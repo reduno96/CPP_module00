@@ -94,7 +94,6 @@ bool Fixed::operator!=(const Fixed &a)
 {
     return this->value != a.getRawBits();
 }
-
 Fixed &Fixed::operator+(const Fixed &a)
 {
     Fixed *ptr = new Fixed((this->toFloat()  + a.toFloat() ));

@@ -5,14 +5,15 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-// void    ff()
-// {
-//     system("leaks -q Brain");
-// }
+void    ff()
+{
+    system("leaks -q Brain");
+}
 
 int main()
 {
-    // atexit(ff);
+    
+    atexit(ff);
     {
         std::cout << "#########Creating Dog and Cat objects:" << std::endl;
         const Animal *j = new Dog();
