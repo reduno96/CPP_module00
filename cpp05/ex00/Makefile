@@ -1,10 +1,10 @@
 SRC= main.cpp Bureaucrat.cpp
 
-OBJ= ${SRC:.c=.o}
+OBJ= ${SRC:.cpp=.o}
 
 NAME = Bureaucrat
 
-CXX = g++ -Wall -Wextra -Werror -std=c++98
+CXX = g++ -Wall -Wextra -Werror -fsanitize=address -std=c++98
 
 all: ${NAME}
 
