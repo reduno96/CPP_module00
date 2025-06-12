@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include <memory>
+
 int main()
 {
     try
@@ -35,7 +35,8 @@ int main()
     }
 
     Bureaucrat n("achraf", 15);
-    Bureaucrat m(n);
+    Bureaucrat m;
+    m = n;
     std::cout << m.getName() << std::endl;
     std::cout << m.getGrade() << std::endl;
     std::cout << "I'm Here" << std::endl;
