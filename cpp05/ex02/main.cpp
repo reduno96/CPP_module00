@@ -1,5 +1,6 @@
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+// #include "Bureaucrat.hpp"
+// #include "AForm.hpp"
+#include <iostream>
 
 int main()
 {
@@ -8,5 +9,8 @@ int main()
     // Form form2("D+", 50, 60);
     // a.signForm(form);
     // a.signForm(form2);
+    std::cout << "Hello, World!";
+    int x = rand();
+    std::cout << x << std::endl;
     return 0;
 }

@@ -3,11 +3,12 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm() : target("default")
 {
-    std::cout << "default constructor called" << std::endl;
+    std::cout << "default Shrubbery constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+    std::cout << "Shrubbery deconstructor  called" << std::endl;
 }
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery", 145, 137), target(target)
 {
@@ -16,13 +17,13 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm(
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other), target(other.target)
 {
-    std::cout << "Shrubbery parameter constructor called" << std::endl;
+    std::cout << "Shrubbery Copy constructor called" << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
     (void)other;
-    std::cout << "assignment not allowed (target is const)" << std::endl;
+    std::cout << "Shrubbery assignment not allowed (target is const)" << std::endl;
     return *this;
 }
 

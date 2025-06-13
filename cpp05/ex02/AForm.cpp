@@ -3,7 +3,6 @@
 
 AForm::AForm() : name("default"), isSigned(false), gradeToSign(150), gradeToExecute(150)
 {
-
     std::cout << "default constructor called" << std::endl;
 }
 
